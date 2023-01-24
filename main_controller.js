@@ -11,7 +11,13 @@ export class MainController{
 
     async strat(){
         let arr = await this.newProjectRepository.getAll();
-       displayProjects(arr);
+        if(arr.length==0){
+            errorMessage("Project list id not found");
+        }
+        else{
+            displayProjects(arr);
+        }
+       
     }
     
     async searchByKeyword(keyword){
@@ -44,6 +50,6 @@ export class MainController{
         hideMessage();
         removeList(); 
         let arr = this.newProjectRepository.getAll();
-       displayProjects(arr);
+        displayProjects(arr);
     }
 }

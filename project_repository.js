@@ -21,7 +21,5 @@ export class ProjectRepository{
       }
       );
       return this.projectList; 
-    }
-
-    
+    } 
   }
