@@ -8,9 +8,12 @@ document.addEventListener("DOMContentLoaded", newMainController.strat());
 //console.log("This is index");
 
 const filterButton = document.getElementById("filterBtn");
-const keyword = document.getElementById("word").value;
 
-filterButton.addEventListener("click", newMainController.searchByKeyword(keyword));
+
+filterButton.addEventListener("click", function(){
+    const keyword = document.getElementById("word").value;
+    newMainController.searchByKeyword(keyword);
+});
 
 
  export function displayProjects(array){

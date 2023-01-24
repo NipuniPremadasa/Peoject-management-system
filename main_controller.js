@@ -13,7 +13,7 @@ export class MainController{
        displayProjects(arr);
     }
     
-    searchByKeyword(keyword){
+    async searchByKeyword(keyword){
         console.log(keyword);
         let arr = this.newProjectRepository.getAll();
         console.log(arr);
