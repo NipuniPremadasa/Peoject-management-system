@@ -16,8 +16,8 @@ export class ProjectRepository{
     }
 
     getAll(){
-      this.projectList= projects.map(function(elem){
-        return elem.name;
+      this.projectList= projects.map(function(element){
+        return element.name;
       }
       );
       //console.log("This is project repository");
