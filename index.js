@@ -10,3 +10,19 @@ console.log("This is index");
 const filterButton = document.getElementById("filterBtn");
 
 filterButton.addEventListener("click", newMainController.searchByKeyword(".word"));
+
+
+ export function displayProjects(array){
+    const list = document.querySelector(".list");
+                
+    const addList = (array, element) => {
+        array.forEach(item => {
+            const li = document.createElement('li')
+            li.textContent = item
+            element.appendChild(li)
+        });
+    }
+            
+    addList(array, list);
+    console.log(list);
+}

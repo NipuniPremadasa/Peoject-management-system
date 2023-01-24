@@ -11,25 +11,18 @@ const projects =  [
 
 export class ProjectRepository{
     constructor(){
+      this.projectList = [];
 
     }
 
     getAll(){
-      console.log("This is project repository");
-      const list = document.querySelector(".list");
-         
-      const addList = (projects, element) => {
-        projects.forEach(item => {
-            const li = document.createElement('li')
-            li.textContent = item.name
-            element.appendChild(li)
-        });
+      this.projectList= projects.map(function(elem){
+        return elem.name;
       }
-      //console.log(addList );
-      //addList(projects, list);
-      addList(projects, list);
-      console.log(list);
-      
+      );
+      console.log("This is project repository");
+      console.log(this.projectList);
+      return this.projectList; 
     }
 
     

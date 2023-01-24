@@ -1,12 +1,16 @@
-import { ProjectRepository } from "./project_repository.js"
+import { ProjectRepository } from "./project_repository.js";
+import { displayProjects } from "./index.js";
+
 export class MainController{
     constructor() {
         this.newProjectRepository = new ProjectRepository();
+        //this.newIndex = new index();
     }
 
-    strat(){
-        this.newProjectRepository.getAll();
-       //console.log(projectList);
+    async strat(){
+        let arr = await this.newProjectRepository.getAll();
+       console.log(arr);
+       displayProjects(arr);
     }
     
     searchByKeyword(keyword){
