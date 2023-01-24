@@ -32,10 +32,22 @@ resetButton.addEventListener("click", function(){
 }
 
 export function removeList(){
-    var projectlistView = document.getElementById("list");
-    var element = projectlistView.lastElementChild;
+    let projectlistView = document.getElementById("list");
+    let element = projectlistView.lastElementChild;
     while (element) {
         projectlistView.removeChild(element);
         element = projectlistView.lastElementChild;
     }
+}
+
+export function errorMessage(message){
+    let error = document.getElementById("error");
+    error.textContent = message;
+    error.style.display = 'block';
+}
+
+export function hideMessage(message){
+    let error = document.getElementById("error");
+    error.textContent = message;
+    error.style.display = 'none';
 }
