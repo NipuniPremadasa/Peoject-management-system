@@ -20,8 +20,6 @@ export class ProjectRepository{
         return element.name;
       }
       );
-      //console.log("This is project repository");
-      //console.log(this.projectList);
       return this.projectList; 
     }
 

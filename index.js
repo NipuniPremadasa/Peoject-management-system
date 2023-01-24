@@ -1,11 +1,8 @@
 import {MainController} from "./main_controller.js";
-//import {ProjectRepository} from "./project_repository"
 
 let newMainController =  new MainController();
 
 document.addEventListener("DOMContentLoaded", newMainController.strat());
-
-//console.log("This is index");
 
 const filterButton = document.getElementById("filterBtn");
 
@@ -14,7 +11,6 @@ filterButton.addEventListener("click", function(){
     const keyword = document.getElementById("word").value;
     newMainController.searchByKeyword(keyword);
 });
-
 
  export function displayProjects(array){
     const list = document.querySelector(".list");
@@ -28,5 +24,4 @@ filterButton.addEventListener("click", function(){
     }
             
     addList(array, list);
-    //console.log(list);
 }
