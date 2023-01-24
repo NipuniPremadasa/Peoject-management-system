@@ -5,11 +5,12 @@ let newMainController =  new MainController();
 
 document.addEventListener("DOMContentLoaded", newMainController.strat());
 
-console.log("This is index");
+//console.log("This is index");
 
 const filterButton = document.getElementById("filterBtn");
+const keyword = document.getElementById("word").value;
 
-filterButton.addEventListener("click", newMainController.searchByKeyword(".word"));
+filterButton.addEventListener("click", newMainController.searchByKeyword(keyword));
 
 
  export function displayProjects(array){
@@ -24,5 +25,5 @@ filterButton.addEventListener("click", newMainController.searchByKeyword(".word"
     }
             
     addList(array, list);
-    console.log(list);
+    //console.log(list);
 }

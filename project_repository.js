@@ -20,8 +20,8 @@ export class ProjectRepository{
         return elem.name;
       }
       );
-      console.log("This is project repository");
-      console.log(this.projectList);
+      //console.log("This is project repository");
+      //console.log(this.projectList);
       return this.projectList; 
     }
 
