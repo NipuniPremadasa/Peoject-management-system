@@ -25,3 +25,12 @@ filterButton.addEventListener("click", function(){
             
     addList(array, list);
 }
+
+export function removeList(){
+    var projectlistView = document.getElementById("list");
+    var element = projectlistView.lastElementChild;
+    while (element) {
+        projectlistView.removeChild(element);
+        element = projectlistView.lastElementChild;
+    }
+}

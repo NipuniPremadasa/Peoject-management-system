@@ -1,5 +1,6 @@
 import { ProjectRepository } from "./project_repository.js";
 import { displayProjects } from "./index.js";
+import { removeList } from "./index.js";
 
 export class MainController{
     constructor() {
@@ -15,7 +16,7 @@ export class MainController{
         console.log(keyword);
         let arr = this.newProjectRepository.getAll();
         console.log(arr);
-
+        
         let filteredList = [];
         arr.forEach(item => {
             if (item.toLowerCase().search(keyword.toLowerCase()) !== -1) {
@@ -23,6 +24,8 @@ export class MainController{
             }
         });
         console.log(filteredList);
+        removeList();
         displayProjects(filteredList);
+        
     }
 }
