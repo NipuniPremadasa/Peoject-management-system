@@ -19,13 +19,15 @@ export class MainController{
         console.log(arr);
 
         let filteredList = [];
-        this.arr.forEach(item => {
-            let name = item;
-            if (name.toLowerCase().search(keyword.toLowerCase()) >= 0) {
+        arr.forEach(item => {
+            //let name = item;
+            if (item.toLowerCase().search(keyword.toLowerCase()) >= 0) {
                 filteredList.push(item);
             }
         });
+        console.log(filteredList);
+        displayProjects(filteredList);
         //this.newProjectRepository.getAll();
-        return filteredList;
+        //return filteredList;
     }
 }
