@@ -28,4 +28,10 @@ export class MainController{
         displayProjects(filteredList);
         
     }
+
+    reset(){
+        removeList(); 
+        let arr = this.newProjectRepository.getAll();
+       displayProjects(arr);
+    }
 }

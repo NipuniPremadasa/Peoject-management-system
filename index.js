@@ -5,11 +5,16 @@ let newMainController =  new MainController();
 document.addEventListener("DOMContentLoaded", newMainController.strat());
 
 const filterButton = document.getElementById("filterBtn");
-
+const resetButton = document.getElementById("resetBtn");
 
 filterButton.addEventListener("click", function(){
     const keyword = document.getElementById("word").value;
     newMainController.searchByKeyword(keyword);
+});
+
+resetButton.addEventListener("click", function(){
+    //const keyword = document.getElementById("word").value;
+    newMainController.reset();
 });
 
  export function displayProjects(array){
