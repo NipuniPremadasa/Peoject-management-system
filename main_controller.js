@@ -16,8 +16,7 @@ export class MainController{
         }
         else{
             displayProjects(arr);
-        }
-       
+        } 
     }
     
     async searchByKeyword(keyword){
@@ -26,24 +25,23 @@ export class MainController{
         console.log(arr);
        
            
-            let filteredList = [];
-            arr.forEach(item => {
-                if (item.toLowerCase().search(keyword.toLowerCase()) !== -1) {
-                    filteredList.push(item);
-                }
-            });
-            console.log(filteredList);
-
-            if(filteredList.length==0){
-                removeList();
-                //displayProjects(filteredList);
-                errorMessage("No result found");
-                
+        let filteredList = [];
+        arr.forEach(item => {
+            if (item.toLowerCase().search(keyword.toLowerCase()) !== -1) {
+                filteredList.push(item);
             }
-            else{
-                removeList();
-                displayProjects(filteredList);
-            }   
+        });
+        console.log(filteredList);
+
+        if(filteredList.length==0){
+            removeList();
+            //displayProjects(filteredList);
+            errorMessage("No result found");
+        }
+        else{
+            removeList();
+            displayProjects(filteredList);
+        }   
     }
 
     reset(){

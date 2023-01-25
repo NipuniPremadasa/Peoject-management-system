@@ -13,11 +13,10 @@ filterButton.addEventListener("click", function(){
 });
 
 resetButton.addEventListener("click", function(){
-    //const keyword = document.getElementById("word").value;
     newMainController.reset();
 });
 
- export function displayProjects(array){
+export function displayProjects(array){
     const list = document.querySelector(".list");
                 
     const addList = (array, element) => {
