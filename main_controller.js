@@ -3,6 +3,7 @@ import { displayProjects } from "./index.js";
 import { removeList } from "./index.js";
 import { showErrorMessage } from "./index.js";
 import { hideMessage } from "./index.js";
+//import { clearInput } from "./index.js";
 
 export class MainController{
     constructor() {
@@ -39,10 +40,12 @@ export class MainController{
         if(filteredList.length==0){
             removeList();
             showErrorMessage("No result found!");
+            
         }
         else{
             removeList();
             displayProjects(filteredList);
+           
         }   
     }
 
@@ -51,5 +54,7 @@ export class MainController{
         removeList(); 
         let arr = this.newProjectRepository.getAll();
         displayProjects(arr);
+        document.getElementById("word").value = '';
+        
     }
 }

@@ -50,3 +50,7 @@ export function hideMessage(message){
     error.textContent = message;
     error.style.display = 'none';
 }
+
+export function clearInput(){
+     document.getElementById("resetBtn").reset();
+}
