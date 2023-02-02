@@ -23,7 +23,7 @@ export class MainController{
     //search by keyword
     async searchByKeyword(keyword){
         console.log(keyword);
-        let arr = this.newProjectRepository.getAll();
+        let arr = await this.newProjectRepository.getAll();
         console.log(arr);
        
            
@@ -49,10 +49,10 @@ export class MainController{
         }   
     }
 
-    reset(){
+    async reset(){
         hideMessage();
         removeList(); 
-        let arr = this.newProjectRepository.getAll();
+        let arr = await this.newProjectRepository.getAll();
         displayProjects(arr);
         document.getElementById("word").value = '';
         
