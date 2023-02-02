@@ -1,7 +1,7 @@
 import { ProjectRepository } from "./project_repository.js";
 import { displayProjects } from "./index.js";
 import { removeList } from "./index.js";
-import { errorMessage } from "./index.js";
+import { showErrorMessage } from "./index.js";
 import { hideMessage } from "./index.js";
 
 export class MainController{
@@ -12,13 +12,14 @@ export class MainController{
     async strat(){
         let arr = await this.newProjectRepository.getAll();
         if(arr.length==0){
-            errorMessage("Project list id not found");
+            showErrorMessage("Project list is not found!");
         }
         else{
             displayProjects(arr);
         } 
     }
     
+    //search by keyword
     async searchByKeyword(keyword){
         console.log(keyword);
         let arr = this.newProjectRepository.getAll();
@@ -26,6 +27,7 @@ export class MainController{
        
            
         let filteredList = [];
+        //filter project names with keyword and add to an array
         arr.forEach(item => {
             if (item.toLowerCase().search(keyword.toLowerCase()) !== -1) {
                 filteredList.push(item);
@@ -33,10 +35,10 @@ export class MainController{
         });
         console.log(filteredList);
 
+
         if(filteredList.length==0){
             removeList();
-            //displayProjects(filteredList);
-            errorMessage("No result found");
+            showErrorMessage("No result found!");
         }
         else{
             removeList();

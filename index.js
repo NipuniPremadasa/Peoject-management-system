@@ -39,7 +39,7 @@ export function removeList(){
     }
 }
 
-export function errorMessage(message){
+export function showErrorMessage(message){
     let error = document.getElementById("error");
     error.textContent = message;
     error.style.display = 'block';

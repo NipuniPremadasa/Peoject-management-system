@@ -11,11 +11,12 @@ const projects =  [
 
 export class ProjectRepository{
     constructor(){
-      this.projectList = [];
+      //this.projectList = [];
 
     }
 
     getAll(){
+      this.projectList = [];
       this.projectList= projects.map(function(element){
         return element.name;
       }
