@@ -2,8 +2,7 @@
 
 export class ProjectRepository{
     constructor(){
-      //this.projectList = [];
-      //this.projects =[];
+      
     }
 
     async getAll(){
@@ -11,16 +10,6 @@ export class ProjectRepository{
      //console.log(projects.json());
      let projectsJson=await response.json();
      //console.log(projectsJson);
-     
-    //  .then(function(response){
-    //     return response.json();
-        
-    //  })
-    //  .then(function(data){
-    //   for(let i=0;i<data.length;i++){
-    //     console.log(data[i]);
-    //   }
-    //  })
      
       this.projectList = [];
       // this.projectList= projects.map(function(element){

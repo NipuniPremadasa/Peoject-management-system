@@ -43,6 +43,7 @@ export class MainController{
             
         }
         else{
+            hideMessage();
             removeList();
             displayProjects(filteredList);
            

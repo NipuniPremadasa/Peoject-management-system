@@ -9,7 +9,13 @@ const resetButton = document.getElementById("resetBtn");
 
 filterButton.addEventListener("click", function(){
     const keyword = document.getElementById("word").value;
-    newMainController.searchByKeyword(keyword);
+    if(keyword==''){
+        showErrorMessage("Enter a keyword!");
+    }
+    else{
+        newMainController.searchByKeyword(keyword);
+    }
+    
 });
 
 resetButton.addEventListener("click", function(){
